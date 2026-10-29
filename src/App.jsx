@@ -1,32 +1,33 @@
 import { useState, useEffect } from 'react'
 import { supabase } from './utils/supabase.js'
 import MealCard from './MealCard.jsx'
+import useTable from './utils/useTable.js'
 import './App.css'
 import "@picocss/pico/css/pico.css"
 
 function App() {
-  const [meal, setMeal] = useState([])
+const { data } = useTable("meals")
 
-  const loadMeal = async () => {
-    const { data, error } = await supabase.from("meals").select()
-    if (error) {
+const [meal, setMeal] = useState([])
+
+const loadMeal = async () => {
+const { data, error } = await supabase.from("meals").select()
+  if (error) {
       console.log(error.message)
       return
     }
     console.log(data)
     setMeal(data)
-  }
+}
 
-  
+return (
+  <div>
+    <h1>Potluck</h1>
+    <button onClick={loadMeal}>Load</button>
+    {meal.map((meal) => <MealCard key={meal.id} meal={meal} />)}
 
-  return (
-    <div>
-      <h1>Potluck</h1>
-      <button onClick={loadMeal}>Load</button>
-      {meal.map((meal) => <MealCard key={meal.id} meal={meal} />)}
-
-    </div>
-  )
+  </div>
+)
 }
 
 export default App
