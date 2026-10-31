@@ -1,9 +1,9 @@
 function MealCard({ meal }) {
 return (
-    <div className="card">
+    <article>
     <h2>{meal.name}</h2>
     <p>Brought by {meal.guest}</p>
-    </div>
+    </article>
 )
 }
 

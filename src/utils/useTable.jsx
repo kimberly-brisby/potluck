@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { supabase } from './utils/supabase'
+import { supabase } from './supabase.js'
 
 function useTable(table) {
 const [data, setData] = useState([])
