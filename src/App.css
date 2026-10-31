@@ -2,12 +2,16 @@
   max-width: 400px;
   margin-top: 1rem;
   padding: 1rem;
-  border: 2px solid #eab814;
+  border: 2px solid #c1f6db;
   border-radius: 8px;
-  background-color: #e4ec9c;
+  background-color: #40a6e9;
   color: black;
 }
 
 .card h2 {
   margin-top: 0;
+}
+
+button{
+  color: bisque;
 }
