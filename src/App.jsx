@@ -35,11 +35,11 @@ async function addMeal (event) {
 
   }
 
-async function deleteMeal(id) {
+async function deleteMeal({id}) {
   const response = await supabase
     .from('meals')
     .delete()
-    .eg('id',id)
+    .eq('id', id)
 }
 
 return (
