@@ -35,7 +35,7 @@ async function addMeal (event) {
 
   }
 
-async function deleteMeal({id}) {
+async function deleteMeal(id) {
   const response = await supabase
     .from('meals')
     .delete()
