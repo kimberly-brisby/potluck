@@ -4,6 +4,7 @@ function handleDelete () {
     deleteMeal(meal.id)
 }
 
+
 return (
 
     <article>
