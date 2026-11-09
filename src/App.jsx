@@ -12,8 +12,11 @@ function App() {
   const loadMeals = async () => {
   const {data, error} = await supabase.from('meals').select()
     setMeals(data)
+
   }
     const { data, error, reload } = useTable("meals")
+
+  
 
 
 async function addMeal (event) {
@@ -55,6 +58,7 @@ return (
 
     <p>{error}</p>
       {data.map((meal) => <MealCard key={meal.id} meal={meal} deleteMeal={deleteMeal} />)}
+
 
   </div>
 )
